@@ -379,7 +379,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         if (indexPath.row == 1) {
-            [cell.textLabel setText:NSLocalizedString(@"No Events", @"A label for a table with no events.")];
+            cell = [cell.textLabel setText:NSLocalizedString(@"No Events", @"A label for a table with no events.")];
         }
         else
         {
@@ -390,7 +390,7 @@
     
     CKTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
-        [[CKTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+        cell = [[CKTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
     CKCalendarEvent *event = self.events[indexPath.row];
