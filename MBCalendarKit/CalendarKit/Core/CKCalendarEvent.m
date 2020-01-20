@@ -42,4 +42,15 @@
     return event;
 }
 
++(CKCalendarEvent *)eventWithTitle:(NSString *)title andDate:(NSDate *)date andInfo:(NSDictionary *)info andSubTitle:(NSString *)subtitle
+{
+    CKCalendarEvent *event = [CKCalendarEvent new];
+    event.title = title;
+    event.date = date;
+    event.info = info;
+    event.subtitle = subtitle;
+    
+    return event;
+}
+
 @end

@@ -74,7 +74,7 @@
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    // [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"noDataCell"];
     
     _tableView.dataSource = self;
@@ -389,13 +389,16 @@
     }
     
     CKTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        [[CKTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    }
     
     CKCalendarEvent *event = self.events[indexPath.row];
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    // cell.textLabel.text = event.title;
-    cell.textLabel.text = @"HELLO"
+    cell.textLabel.text = event.title;
+    cell.detailTextLabel.text = event.subtitle;
     
     UIView *colorView = [[UIView alloc] initWithFrame:CGRectMake(3, 6, 20, 20)];
     CALayer *layer = [CALayer layer];

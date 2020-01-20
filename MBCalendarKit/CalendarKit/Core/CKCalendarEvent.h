@@ -28,6 +28,11 @@ NS_SWIFT_NAME(CalendarEvent)
  */
 @property (copy) NSString *title;
 
+/**
+The Subtitle for the event.
+*/
+@property (copy) NSString *subtitle;
+
 
 /**
  A user info dictionary.
@@ -51,5 +56,6 @@ NS_SWIFT_NAME(CalendarEvent)
 +(CKCalendarEvent *)eventWithTitle:(NSString *)title andDate:(NSDate *)date andInfo:(NSDictionary *)info;
 +(CKCalendarEvent *)eventWithTitle:(NSString *)title andDate:(NSDate *)date andInfo:(NSDictionary *)info andColor:(UIColor *)color;
 +(CKCalendarEvent *)eventWithTitle:(NSString *)title andDate:(NSDate *)date andInfo:(NSDictionary *)info andImage:(NSData *)image;
++(CKCalendarEvent *)eventWithTitle:(NSString *)title andDate:(NSDate *)date andInfo:(NSDictionary *)info andSubTitle:(NSString *)subtitle;
 
 @end
